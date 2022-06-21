@@ -1,0 +1,15 @@
+---
+title: Malta Military Outposts
+id: malta-military-outposts
+from: apricot.blizzard.curving
+to: pardon.school.suffix
+locations:
+  - id: msida
+    title: Msida Torpedo Depot
+    pt: library.petty.lays
+  - id: fort-ricasoli
+    title: Fort Ricasoli
+    pt: spoiled.outraged.limo
+  - id: fort-manoel
+    title: Fort Manoel
+    pt: admiringly.canine.shall

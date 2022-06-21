@@ -1,0 +1,22 @@
+[package]
+name = "map-prep"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0"
+clap = { version="3.1", features = ["derive"] }
+base64 = "0.13"
+gmaps-static = { git="https://github.com/lmammino/gmaps-static" }
+http = "0.2"
+hyper = { version= "0.14", features=["full"] }
+hyper-tls = "0.5"
+serde = { version="1.0", features = ["derive"] }
+serde_json = { version="1.0" }
+serde_yaml = "0.8"
+thiserror = "1.0"
+tower = { version = "0.4", features = ["full"] }
+tower-http = { version="0.3" }
+tokio = { version= "1.18", features = ["rt", "rt-multi-thread", "macros" ]}
