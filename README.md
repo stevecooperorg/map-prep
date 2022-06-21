@@ -52,3 +52,43 @@ maps/out/
 This is so you can create reliable URLs to the maps, again from websites, markdown, etc.. 
 
 So now, as you change your map definitions, map-prep keeps up with you.
+
+# Usage
+
+To use it you need API keys for both the google api and the what3words API. I expect them to be available as environment variables called
+
+```
+GOOGLE_MAPS_API_KEY
+WHAT3WORDS_API_KEY
+```
+
+The usage can be shown with the `--help` flag, but here is a snapshot of the args;
+
+```
+map-prep 0.1.0
+Steve Cooper
+
+USAGE:
+    map-prep --map-dir <MAP_DIR> --location-file <LOCATION_FILE> --download-dir <DOWNLOAD_DIR> --output-dir <OUTPUT_DIR>
+
+OPTIONS:
+    -d, --download-dir <DOWNLOAD_DIR>
+            the directory to download maps to - this is a cache directory and should not be checked
+            into source control
+
+    -h, --help
+            Print help information
+
+    -l, --location-file <LOCATION_FILE>
+            the file that contains the location cache. You can choose to source control this file,
+            or not
+
+    -m, --map-dir <MAP_DIR>
+            the directory that contains your map yaml files
+
+    -o, --output-dir <OUTPUT_DIR>
+            the directory where the final maps will be written to, ready to be used
+
+    -V, --version
+            Print version information
+```

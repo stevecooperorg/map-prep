@@ -10,12 +10,16 @@ use std::path::PathBuf;
 #[derive(Parser, Debug)]
 #[clap(author, version, about, long_about = None)]
 struct Args {
+    /// the directory that contains your map yaml files
     #[clap(short, long)]
     map_dir: PathBuf,
+    /// the file that contains the location cache. You can choose to source control this file, or not.
     #[clap(short, long)]
     location_file: PathBuf,
+    /// the directory to download maps to - this is a cache directory and should not be checked into source control.
     #[clap(short, long)]
     download_dir: PathBuf,
+    /// the directory where the final maps will be written to, ready to be used.
     #[clap(short, long)]
     output_dir: PathBuf,
 }
