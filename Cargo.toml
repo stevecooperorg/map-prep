@@ -20,7 +20,7 @@ hyper = { version= "0.14", features=["full"] }
 hyper-tls = "0.5"
 serde = { version="1.0", features = ["derive"] }
 serde_json = { version="1.0" }
-serde_yaml = "0.8"
+serde_yaml = "0.9"
 thiserror = "1.0"
 tower = { version = "0.4", features = ["full"] }
 tower-http = { version="0.3" }
