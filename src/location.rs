@@ -38,10 +38,10 @@ impl LocationCache {
     }
 
     pub fn get_gmaps_location(&self, pt: &W3W) -> Option<Location> {
-        self.get(pt).map(|loc| Location::LatLng(loc.0, loc.1))
+        self.get(pt).map(|loc| Location::LatLng(loc.latitude, loc.longitude))
     }
 
-    fn deserialize(yaml: &str, w3w_client: What3WordsClient) -> Result<Self> {
+    pub fn deserialize(yaml: &str, w3w_client: What3WordsClient) -> Result<Self> {
         let cache = serde_yaml::from_str(yaml).context("could not deserialize location cache")?;
         Ok(Self::new(cache, w3w_client))
     }
@@ -74,7 +74,7 @@ impl LocationCache {
 
         println!("All Locations:");
         for (pt, coords) in &location_cache.cache {
-            println!("{} -> {:?}", pt, coords);
+            println!("{} -> {},{}", pt, coords.latitude, coords.longitude);
         }
 
         // serialise and save location cache
@@ -97,12 +97,12 @@ struct ConvertLatLongResponse {
 }
 
 impl ConvertResponse {
-    fn to_geo_coords(&self) -> GeoCoords {
-        (self.coordinates.lat, self.coordinates.lng)
+    fn to_geo_coords(&self) -> GeoCoords  {
+        GeoCoords::new(self.coordinates.lat, self.coordinates.lng)
     }
 }
 
-struct What3WordsClient {
+pub struct What3WordsClient {
     api_key: String,
 }
 

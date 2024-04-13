@@ -72,10 +72,10 @@ impl GoogleMaps {
                 let loc = location_cache
                     .get(&loc.pt)
                     .context(format!("getting '{}' from location cache", loc.id))?;
-                left = left.min(loc.1);
-                right = right.max(loc.1);
-                top = top.min(loc.0);
-                bottom = bottom.max(loc.0);
+                left = left.min(loc.longitude);
+                right = right.max(loc.longitude);
+                top = top.min(loc.latitude);
+                bottom = bottom.max(loc.latitude);
             }
             (left, top, bottom, right)
         };

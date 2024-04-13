@@ -29,12 +29,12 @@ In the doc above, I'm using [What3Words](https://what3words.com/) locations as t
 ```
 # .map_prep/locations.yaml
 
-topic.arena.insist:
-  - 52.519904
-  - -2.17582
-lived.occupations.spacing:
-  - 52.497938
-  - -2.169036
+admiringly.canine.shall:
+  latitude: 35.903339
+  longitude: 14.503311
+apricot.blizzard.curving:
+  latitude: 35.898865
+  longitude: 14.48767
 ```
 
 Once this is done, the maps are prepared. The Google Static Maps API just requires you to create a URL of a specific format, and then perform a GET to download it.
