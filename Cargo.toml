@@ -23,5 +23,5 @@ serde_json = { version="1.0" }
 serde_yaml = "0.9"
 thiserror = "1.0"
 tower = { version = "0.4", features = ["full"] }
-tower-http = { version="0.3" }
+tower-http = { version="0.5" }
 tokio = { version= "1.18", features = ["rt", "rt-multi-thread", "macros" ]}
