@@ -55,7 +55,7 @@ impl LocationCache {
         let w3w_client = What3WordsClient::init_from_env()?;
 
         let mut location_cache = if location_file.exists() {
-            let location_file_yaml = fs::read_to_string(&location_file).context(format!(
+            let location_file_yaml = fs::read_to_string(location_file).context(format!(
                 "reading location file - if this fails try deleting '{}'",
                 location_file.to_string_lossy()
             ))?;

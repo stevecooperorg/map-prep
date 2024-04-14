@@ -49,7 +49,7 @@ async fn main() -> Result<()> {
 
     if !location_cache_dir.exists() {
         // make sure we've got a directory to download into
-        fs::create_dir_all(&location_cache_dir)?;
+        fs::create_dir_all(location_cache_dir)?;
         println!(
             "Created missing location cache dir: '{}'",
             location_cache_dir.to_string_lossy()

@@ -82,7 +82,7 @@ impl GoogleMaps {
 
         let width = right - left;
         let height = bottom - top;
-        let ratio = width as f64 / height as f64;
+        let ratio = width  / height ;
         let (width, height) = if ratio > 1.0f64 {
             // landscape
             (MAX_MAP_EDGE_PX, MAX_MAP_EDGE_PX / ratio as i32)

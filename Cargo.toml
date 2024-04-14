@@ -13,7 +13,7 @@ readme = "README.md"
 [dependencies]
 anyhow = "1.0"
 clap = { version="3.1", features = ["derive"] }
-base64 = "0.13"
+base64 = "0.20"
 gmaps-static = { git="https://github.com/lmammino/gmaps-static" }
 http = "0.2"
 hyper = { version= "0.14", features=["full"] }

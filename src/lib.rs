@@ -43,7 +43,7 @@ pub struct Map {
 
 impl Map {
     pub fn maps_from_dir(map_dir: &Path) -> Result<Vec<Map>> {
-        let files_in_dir = fs::read_dir(&map_dir)?.flatten().map(|p| p.path());
+        let files_in_dir = fs::read_dir(map_dir)?.flatten().map(|p| p.path());
         let map_files: Vec<_> = files_in_dir
             .into_iter()
             .filter(|p| p.to_string_lossy().ends_with(".yaml"))
@@ -69,7 +69,7 @@ impl Map {
 
     pub fn maps_from_str(map_file_yaml: &str) -> Result<Vec<Map>> {
         let mut maps = vec![];
-        for document in serde_yaml::Deserializer::from_str(&map_file_yaml) {
+        for document in serde_yaml::Deserializer::from_str(map_file_yaml) {
             let map = Map::deserialize(document)?;
             maps.push(map);
         }
