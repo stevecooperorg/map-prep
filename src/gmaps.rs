@@ -82,13 +82,15 @@ impl GoogleMaps {
 
         let width = right - left;
         let height = bottom - top;
-        let ratio = width  / height ;
+        let ratio = width  / height;
         let (width, height) = if ratio > 1.0f64 {
             // landscape
-            (MAX_MAP_EDGE_PX, MAX_MAP_EDGE_PX / ratio as i32)
+            let height = (MAX_MAP_EDGE_PX as f64 / ratio) as i32;
+            (MAX_MAP_EDGE_PX, height)
         } else {
             // portrait
-            (MAX_MAP_EDGE_PX / ratio as i32, MAX_MAP_EDGE_PX)
+            let width = (MAX_MAP_EDGE_PX as f64/ ratio) as i32;
+            (width, MAX_MAP_EDGE_PX)
         };
 
         let size = (width, height).into();

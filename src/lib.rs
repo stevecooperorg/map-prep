@@ -43,7 +43,7 @@ pub struct Map {
 
 impl Map {
     pub fn maps_from_dir(map_dir: &Path) -> Result<Vec<Map>> {
-        let files_in_dir = fs::read_dir(map_dir)?.flatten().map(|p| p.path());
+        let files_in_dir = fs::read_dir(map_dir).with_context(|| format!("loading map dir '{}'", map_dir.display()))?.flatten().map(|p| p.path());
         let map_files: Vec<_> = files_in_dir
             .into_iter()
             .filter(|p| p.to_string_lossy().ends_with(".yaml"))
